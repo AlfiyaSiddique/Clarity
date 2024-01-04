@@ -1,23 +1,17 @@
 import { Router } from "express";
-import UserController from "../Controllers/UserController.js";
-import RecipeController from "../Controllers/RecipeController.js";
+import NoteController from "../Controllers/NoteController.js";
 import authenticateToken from "../middleware/auth.js";
+import UserController from "../Controllers/UserController.js";
 
 const router = Router();
 
 
-// Get Requests
-router.get('/usernames', UserController.getAllUserName)
-router.get('/token', authenticateToken ,UserController.verifyUserByToken)
-router.get("/recipes", RecipeController.allRecipe)
-
-
-// Post Requests
+// Requests
 router.post('/signup', UserController.Signup)
 router.post('/login', UserController.Login)
-router.post('/recipe/add', authenticateToken, RecipeController.addRecipe)
-router.post('/recipe/update', authenticateToken, RecipeController.updateRecipe)
-router.post('/recipe/readall', authenticateToken, RecipeController.getOneUserRecipes)
-router.post('/recipe/delete', authenticateToken, RecipeController.deleteRecipe)
+router.post('/notes/add', authenticateToken, NoteController.addNotes)
+router.get('/notes/get/user',authenticateToken, NoteController.allNotes)
+router.put('/notes/update/:noteid', authenticateToken, NoteController.updateNotes)
+router.delete('/notes/delete/:noteid', authenticateToken, NoteController.deleteNotes)
 
 export default router;

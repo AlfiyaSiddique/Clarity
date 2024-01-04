@@ -14,7 +14,7 @@ background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
 }
 
 header {
-  background-color: #f5ba13;
+  background-color: var(--main);
   margin: auto -16px;
   padding: 16px 32px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
@@ -61,7 +61,7 @@ footer p {
   position: relative;
   float: right;
   margin-right: 10px;
-  color: #f5ba13;
+  color: var(--main);
   border: none;
   width: 36px;
   height: 36px;
@@ -92,7 +92,7 @@ form.create-note button {
   position: absolute;
   right: 18px;
   bottom: -18px;
-  background: #f5ba13;
+  background: var(--main);
   color: #fff;
   border: none;
   border-radius: 50%;

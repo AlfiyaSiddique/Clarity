@@ -1,13 +1,12 @@
 // models/Note.js
-
-const mongoose = require('mongoose');
+import mongoose from "mongoose";
 
 const noteSchema = new mongoose.Schema({
   title: {
     type: String,
     required: true,
     trim: true,
-    minlength: 10,
+    minlength: 4,
     maxlength: 30, // Adjust the maximum length as needed
   },
   content: {
@@ -16,6 +15,11 @@ const noteSchema = new mongoose.Schema({
     trim: true,
     minlength: 20,
     maxlength: 200,
+  },
+  userid: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+   required: true
   },
   createdAt: {
     type: Date,
@@ -29,4 +33,4 @@ const noteSchema = new mongoose.Schema({
 
 const Note = mongoose.model('Note', noteSchema);
 
-module.exports = Note;
+export default Note;
