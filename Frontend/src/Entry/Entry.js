@@ -3,7 +3,6 @@ import { Card, Input } from "antd";
 import { Link } from "react-router-dom";
 import {
   UserAddOutlined,
-  UsergroupAddOutlined,
   PhoneOutlined,
   SecurityScanOutlined,
 } from "@ant-design/icons";

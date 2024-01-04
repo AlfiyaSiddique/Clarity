@@ -16,7 +16,7 @@ app.use(cors())
 app.use("/api", router)
 
 app.get("/", (req, res)=>{
-  res.send("TastyTrails Backend")
+  res.send("Clarity Backend")
 })
 
 // Database Connection and server
