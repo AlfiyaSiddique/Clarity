@@ -19,7 +19,7 @@ const noteSchema = new mongoose.Schema({
   userid: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
-   required: true
+    required: true,
   },
   createdAt: {
     type: Date,
@@ -31,6 +31,6 @@ const noteSchema = new mongoose.Schema({
   },
 });
 
-const Note = mongoose.model('Note', noteSchema);
+const Note = mongoose.model("Note", noteSchema);
 
 export default Note;

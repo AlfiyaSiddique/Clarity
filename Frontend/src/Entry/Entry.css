@@ -1,40 +1,40 @@
-:root{
+:root {
   --main: #6C63FF;
 }
 
 /* Classes */
-.entryCard{
+.entryCard {
   width: 400px;
   margin: auto;
   margin-top: 2rem;
 }
 
-.switch{
-    text-align: center;
-    margin-top: 1rem;
+.switch {
+  text-align: center;
+  margin-top: 1rem;
 }
 
 /* ID */
-#signup-signin{
-    padding: 2rem;
-    min-height: 100vh;
- }
-
- /* Selector */
- .ant-card-head h2{
-    color: whitesmoke;
+#signup-signin {
+  padding: 2rem;
+  min-height: 100vh;
 }
 
- .entryCard span{
-    margin: 5px auto;
- }
-
- #signup-signin .ant-card-head{
-    background-color: var(--main);
-    color: whitesmoke;
+/* Selector */
+.ant-card-head h2 {
+  color: whitesmoke;
 }
 
-.buttonBig{
+.entryCard span {
+  margin: 5px auto;
+}
+
+#signup-signin .ant-card-head {
+  background-color: var(--main);
+  color: whitesmoke;
+}
+
+.buttonBig {
   background-color: var(--main);
   color: whitesmoke;
   padding: 10px 20px;
@@ -46,12 +46,17 @@
   cursor: pointer;
 }
 
-#signup-signin  .buttonBig {
+#signup-signin .buttonBig {
   width: 100%;
   margin-top: 2rem;
 }
 
 
-.switch a{
-    margin-left: 5px;
+.switch a {
+  margin-left: 5px;
+}
+
+.error {
+  color: red;
+  font-weight: 700;
 }

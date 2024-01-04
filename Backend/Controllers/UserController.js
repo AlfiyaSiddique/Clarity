@@ -1,6 +1,7 @@
 import bcrypt from "bcrypt";
 import User from "../models/User.js";
 import jwt from "jsonwebtoken";
+
 /**
  * @route {POST} /api/signup
  * @description Create a new user
@@ -22,22 +23,28 @@ const Signup = async (req, res) => {
     const token = jwt.sign({ userId: createdUser._id }, process.env.SECRET, {
       expiresIn: "2d",
     });
-    res.status(201).json({ success: true, user: createdUser, token: token, message: "User Created Successfully" });
+    res
+      .status(201)
+      .json({
+        success: true,
+        user: createdUser,
+        token: token,
+        message: "User Created Successfully",
+      });
   } catch (error) {
     console.log(error);
     res.status(404).json({ success: false, message: "Internal server error" });
   }
 };
 
-
 /**
- * @route {POST} /api/usernames
+ * @route {POST} /api/login
  * @description Authenticates an User
  * @access public
  */
 const Login = async (req, res) => {
   try {
-    const user = await User.findOne({email: req.body.email});
+    const user = await User.findOne({ email: req.body.email });
 
     if (!user)
       return res
@@ -55,14 +62,17 @@ const Login = async (req, res) => {
         .json({ success: false, message: "Incorrect Password" });
 
     // If the password is correct, generate a JWT token
-    const token = jwt.sign(
-      { userId: user._id},
-      process.env.SECRET,
-      {
-        expiresIn: "30d",
-      }
-    );
-    res.status(200).json({ success: true, user: user, token: token, message: "Login Successful" });
+    const token = jwt.sign({ userId: user._id }, process.env.SECRET, {
+      expiresIn: "30d",
+    });
+    res
+      .status(200)
+      .json({
+        success: true,
+        user: user,
+        token: token,
+        message: "Login Successful",
+      });
   } catch (error) {
     console.log(error);
     return res

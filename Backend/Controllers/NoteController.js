@@ -8,12 +8,16 @@ import Note from "../models/Note.js";
 
 const addNotes = async (req, res) => {
   try {
-    const data = {...req.body, userid: req.user.userId}
+    const data = { ...req.body, userid: req.user.userId };
     const newNote = new Note(data);
     const saved = await newNote.save();
     return res
       .status(201)
-      .json({ success: true, message: "Note Added Successfully", ...saved._doc });
+      .json({
+        success: true,
+        message: "Note Added Successfully",
+        ...saved._doc,
+      });
   } catch (error) {
     console.log(error);
     res.status(404).json({ success: false, message: "Internal server error" });
@@ -27,8 +31,10 @@ const addNotes = async (req, res) => {
  */
 const allNotes = async (req, res) => {
   try {
-    const notes = await Note.find({userid: req.user.userId});
-    return res.status(200).json({ success: true, message: "All Notes are returned", notes });
+    const notes = await Note.find({ userid: req.user.userId });
+    return res
+      .status(200)
+      .json({ success: true, message: "All Notes are returned", notes });
   } catch (error) {
     console.log(error);
     res.status(404).json({ success: false, message: "Internal server error" });
@@ -57,14 +63,16 @@ const updateNotes = async (req, res) => {
 };
 
 /**
- * @POST /api/notes/delete
+ * @POST /api/notes/delete/:noteid
  * @description Deletes a Recipe
  * @access private
  */
 const deleteNotes = async (req, res) => {
   try {
     await Note.deleteOne({ _id: req.params.noteid });
-    return res.status(200).json({ success: true, message: "Note deleted successfully" });
+    return res
+      .status(200)
+      .json({ success: true, message: "Note deleted successfully" });
   } catch (error) {
     console.log(error);
     res.status(404).json({ success: false, message: "Internal server error" });
@@ -79,5 +87,3 @@ const NoteController = {
 };
 
 export default NoteController;
-
-

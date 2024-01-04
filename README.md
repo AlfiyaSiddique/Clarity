@@ -16,8 +16,20 @@ Clarity is a note keeping application designed to help you become more organise 
 
 The project is organized into two main directories within the root folder:
 
-1. **frontend:** Contains all the files related to the frontend development.
-2. **backend:** Holds the backend codebase and configurations.
+1. **Frontend:** Contains all the files related to the frontend development.
+2. **Backend:** Holds the backend codebase and configurations.
+
+- **Set Up**
+ cd to both the directories Frontend and Backend and run the npm install command on each.
+
+- **Run Backend**
+  ```bash
+    node server.js
+or use nodemon server.js
+
+- **Run Fromtend**
+  ```bash
+    npm start
 
 ## Simple Note-Taking Backend API Documentation
 

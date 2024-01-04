@@ -3,14 +3,16 @@
   margin: 0;
   box-sizing: border-box;
 }
+
 html {
   font-family: "Montserrat", sans-serif;
 }
+
 body {
   background: #eee;
   padding: 0 16px;
   overflow-x: hidden;
-background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+  background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
 }
 
 header {
@@ -18,12 +20,33 @@ header {
   margin: auto -16px;
   padding: 16px 32px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: space-between;
 }
 
 header h1 {
   color: #fff;
-  font-family: "McLaren", cursive;
+  font-family: "Montserrat", sans-serif;
   font-weight: 200;
+}
+
+header #name {
+  font-weight: 200;
+  font-size: 1.5rem;
+}
+
+header span {
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  margin: 10px;
+}
+
+header #logout span {
+  padding: 10px 8px;
+  background-color: #fff;
+  color: black;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 footer {
@@ -31,12 +54,13 @@ footer {
   text-align: center;
   bottom: 0;
   width: 100%;
-  height: 2.5rem;
+  height: 1rem;
 }
 
 footer p {
   color: #ccc;
 }
+
 .note {
   background: #fff;
   border-radius: 7px;
@@ -46,10 +70,12 @@ footer p {
   margin: 16px;
   float: left;
 }
+
 .note h1 {
   font-size: 1.1em;
   margin-bottom: 6px;
 }
+
 .note p {
   font-size: 1.1em;
   margin-bottom: 10px;
@@ -78,6 +104,7 @@ form.create-note {
   border-radius: 7px;
   box-shadow: 0 1px 5px rgb(138, 137, 137);
 }
+
 form.create-note input,
 form.create-note textarea {
   width: 100%;
@@ -88,6 +115,7 @@ form.create-note textarea {
   font-family: inherit;
   resize: none;
 }
+
 form.create-note button {
   position: absolute;
   right: 18px;
@@ -101,4 +129,13 @@ form.create-note button {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
   cursor: pointer;
   outline: none;
+}
+
+.btns {
+  display: flex;
+  justify-content: end;
+}
+
+.create-note .error {
+  font-size: .8rem;
 }
